@@ -1,4 +1,4 @@
-function loadHome() {
+function makeHome() {
     const homePage = document.createElement("div");
     homePage.classList.add("home");
     homePage.appendChild(addTitle("Ice Cream Parlor"));
@@ -29,11 +29,11 @@ function addImg(src, alt) {
     return image;
 }
 
-function loadPage() {
-    const main = document.getElementById("main");
-    main.textContent="";
-    main.appendChild(loadHome());
+function loadHome() {
+    const content = document.getElementById("content");
+    //main.textContent="";
+    content.appendChild(makeHome());
 }
 
-export default loadPage;
+export default loadHome;
 

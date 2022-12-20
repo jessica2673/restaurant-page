@@ -1,10 +1,10 @@
-function loadMenu() {
+function makeMenu() {
     const menuPage = document.createElement("div");
     menuPage.classList.add("menu");
     menuPage.appendChild(addP("menu", "title"));
-    menuPage.appendChild(addP("Welcome to the menu!"));
-    menuPage.addMenuItem("Ice Cream Sundae", 14.00, "Three scoops of delicious ice cream topped with sprinkles and melted chocolate.",
-    "icecream.jpg", "photo of sundae");
+    menuPage.appendChild(addP("Welcome to the menu!", "text"));
+    menuPage.appendChild(addMenuItem("Ice Cream Sundae", 14.00, "Three scoops of delicious ice cream topped with sprinkles and melted chocolate.",
+    "icecream.jpg", "photo of sundae"));
 
     return menuPage;
 }
@@ -19,10 +19,8 @@ function addP(content, c) {
 function addMenuItem(name, price, description, image, alt) {
     const item = document.createElement("div");
     item.classList.add("item");
-    
-    const name = document.createElement("p");
-    name.classList.add("name");
-    item.appendChild(name);
+
+    item.appendChild(addP(name, "name"));
 
     item.appendChild(addImg(image, alt));
 
@@ -38,11 +36,10 @@ function addImg(src, alt) {
     return image;
 }
 
-function loadPage() {
-    const main = document.getElementById("main");
-    main.textContent="";
-    main.appendChild(loadMenu());
+function loadMenu() {
+    const content = document.getElementById("content");
+    content.appendChild(makeMenu());
 }
 
-export default loadPage;
+export default loadMenu;
 

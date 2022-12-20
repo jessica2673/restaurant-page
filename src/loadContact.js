@@ -1,4 +1,4 @@
-function loadContact() {
+function makeContact() {
     const contactPage = document.createElement("div");
     contactPage.classList.add("contact");
     contactPage.appendChild(addTitle("Contact Us"));
@@ -27,11 +27,10 @@ function addImg(src, alt) {
     return image;
 }
 
-function loadPage() {
-    const main = document.getElementById("main");
-    main.textContent="";
-    main.appendChild(loadContact());
+function loadContact() {
+    const content = document.getElementById("content");
+    content.appendChild(makeContact());
 }
 
-export default loadPage;
+export default loadContact;
 
