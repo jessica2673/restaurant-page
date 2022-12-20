@@ -1,14 +1,18 @@
 function makeMenu() {
     const menuPage = document.createElement("div");
     menuPage.classList.add("menu");
-    menuPage.appendChild(addP("Menu", "intro"));
-    menuPage.appendChild(addP("Welcome to the menu!"));
-    menuPage.appendChild(addMenuItem("Ice Cream Sundae", "$14.00", "Three scoops of delicious ice cream topped with sprinkles and melted chocolate.",
+    menuPage.appendChild(addP("Menu", "title"));
+    menuPage.appendChild(addP("Welcome to the menu!", "text"));
+
+    const itemContainer = document.createElement("div");
+    itemContainer.setAttribute('id', 'itemContainer');
+    itemContainer.appendChild(addMenuItem("Ice Cream Sundae", "$14.00", "Three scoops of delicious ice cream topped with sprinkles and melted chocolate.",
     "sundae.jpg", "photo of sundae"));
-    menuPage.appendChild(addMenuItem("Banana Split", "$12.50", "3 scoops of ice cream on top of a sweet and perfectly ripe banana. \
-    Add an unlimited amount of toppings!", "banana_split.jpg", "picture of banana split"));
-    menuPage.appendChild(addMenuItem("Popsicle", "$5.00", "An ice cream popsicle perfect for travel!", "popsicle.jpg", 
+    itemContainer.appendChild(addMenuItem("Banana Split", "$12.50", "3 scoops of ice cream on top of a sweet and perfectly ripe banana. \
+     Add an unlimited amount of toppings!", "banana_split.jpg", "picture of banana split"));
+    itemContainer.appendChild(addMenuItem("Popsicle", "$5.00", "An ice cream popsicle perfect for travel!", "popsicle.jpg", 
     "picture of popsicle"));
+    menuPage.appendChild(itemContainer);
 
     return menuPage;
 }

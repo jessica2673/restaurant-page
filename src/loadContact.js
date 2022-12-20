@@ -1,22 +1,16 @@
 function makeContact() {
     const contactPage = document.createElement("div");
     contactPage.classList.add("contact");
-    contactPage.appendChild(addTitle("Contact Us"));
-    contactPage.appendChild(addP("Our email is parlor@gmail.com"));
+    contactPage.appendChild(addP("Contact Us", "title"));
+    contactPage.appendChild(addP("Our email is parlor@gmail.com", "text"));
 
     return contactPage;
 }
 
-function addTitle(content) {
+function addP(content, c) {
     const paragraph = document.createElement("p");
     paragraph.textContent = content;
-    paragraph.classList.add("intro");
-    return paragraph;
-}
-
-function addP(content) {
-    const paragraph = document.createElement("p");
-    paragraph.textContent = content;
+    paragraph.classList.add(c);
     return paragraph;
 }
 
