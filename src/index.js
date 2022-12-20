@@ -6,40 +6,51 @@ import loadMenu from './loadMenu';
 function component() {
     const element = document.createElement('div');
     const content = document.getElementById('content');
+    const nav = createNav();
+    
+    content.appendChild(nav);
 
     const homeBtn = document.createElement('button');
     homeBtn.textContent = "Home";
     homeBtn.classList.add("tab");
-    element.appendChild(homeBtn);
+    nav.appendChild(homeBtn);
     homeBtn.addEventListener("click", (e) => {
         content.textContent='';
+        content.appendChild(nav);
         loadHome();
     });
 
     const menuBtn = document.createElement('button');
     menuBtn.textContent = "Menu";
     menuBtn.classList.add("tab");
-    element.appendChild(menuBtn);
+    nav.appendChild(menuBtn);
     menuBtn.addEventListener("click", (e) => {
         content.textContent='';
+        content.appendChild(nav);
         loadMenu();
     });
 
     const contactBtn = document.createElement('button');
     contactBtn.textContent = "Contact";
     contactBtn.classList.add("tab");
-    element.appendChild(contactBtn);
+    nav.appendChild(contactBtn);
     contactBtn.addEventListener("click", (e) => {
         content.textContent='';
+        content.appendChild(nav);
         loadContact();
     });
-    initPage();
+    
+    loadHome();
     return element;
   }
   
-  document.body.appendChild(component());
-
-function initPage() {
-    loadHome();
+function createNav() {
+    const navbar = document.createElement('div');
+    navbar.classList.add('nav');
+    return navbar;
 }
+
+document.body.appendChild(component());
+
+
 

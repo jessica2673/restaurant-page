@@ -12,7 +12,7 @@ function makeHome() {
 function addTitle(content) {
     const paragraph = document.createElement("p");
     paragraph.textContent = content;
-    paragraph.classList.add("intro");
+    paragraph.classList.add("title");
     return paragraph;
 }
 
@@ -31,7 +31,6 @@ function addImg(src, alt) {
 
 function loadHome() {
     const content = document.getElementById("content");
-    //main.textContent="";
     content.appendChild(makeHome());
 }
 

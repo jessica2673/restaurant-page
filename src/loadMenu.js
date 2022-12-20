@@ -1,10 +1,14 @@
 function makeMenu() {
     const menuPage = document.createElement("div");
     menuPage.classList.add("menu");
-    menuPage.appendChild(addP("menu", "title"));
-    menuPage.appendChild(addP("Welcome to the menu!", "text"));
-    menuPage.appendChild(addMenuItem("Ice Cream Sundae", 14.00, "Three scoops of delicious ice cream topped with sprinkles and melted chocolate.",
-    "icecream.jpg", "photo of sundae"));
+    menuPage.appendChild(addP("Menu", "intro"));
+    menuPage.appendChild(addP("Welcome to the menu!"));
+    menuPage.appendChild(addMenuItem("Ice Cream Sundae", "$14.00", "Three scoops of delicious ice cream topped with sprinkles and melted chocolate.",
+    "sundae.jpg", "photo of sundae"));
+    menuPage.appendChild(addMenuItem("Banana Split", "$12.50", "3 scoops of ice cream on top of a sweet and perfectly ripe banana. \
+    Add an unlimited amount of toppings!", "banana_split.jpg", "picture of banana split"));
+    menuPage.appendChild(addMenuItem("Popsicle", "$5.00", "An ice cream popsicle perfect for travel!", "popsicle.jpg", 
+    "picture of popsicle"));
 
     return menuPage;
 }
@@ -21,11 +25,10 @@ function addMenuItem(name, price, description, image, alt) {
     item.classList.add("item");
 
     item.appendChild(addP(name, "name"));
-
     item.appendChild(addImg(image, alt));
-
-    item.appendChild(addP(price, "price"));
     item.appendChild(addP(description, "description"));
+    item.appendChild(addP(price, "price"));
+
     return item;
 }
 
@@ -33,6 +36,7 @@ function addImg(src, alt) {
     const image = document.createElement("img");
     image.src = src;
     image.alt = alt;
+    image.classList.add('preview');
     return image;
 }
 

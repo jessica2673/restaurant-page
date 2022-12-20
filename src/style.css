@@ -1,6 +1,6 @@
 *{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: medium;
+    font-size: 1.04em;
 }
 
 body {
@@ -21,6 +21,25 @@ body {
     font-weight: 800;
 }
 
+.nav {
+    width: 100%;
+    height: 10%;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: left;
+    background-color: rgb(253, 253, 197);
+}
+
+.tab {
+    border-radius: 5%;
+    padding: 20px;
+    background-color: aliceblue;
+    outline: none;
+    border: none;
+    box-shadow: 0 4px 8px 0 lightgray;
+}
+
 .flavor {
     list-style: circle;
 }
@@ -31,11 +50,38 @@ body {
     gap: 8px;
 }
 
-.image {
+img{
     height: 15em;
 }
 
-button {
-    display: block;
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    background-color: aliceblue;
+    box-shadow: 0 4px 8px 0 lightgray;
 }
+
+.name {
+    width: 100%;
+    font-size: 1.05em;
+}
+
+.preview {
+    width: 20%;
+    height: fit-content;
+    padding: 20px;
+    justify-content: left;
+}
+
+.description {
+    width: 50%;
+    flex-wrap: wrap;
+    justify-content: right;
+}
+
+.price {
+    width: 100%;
+}
+
 
